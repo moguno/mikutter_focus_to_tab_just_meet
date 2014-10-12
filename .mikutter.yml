@@ -1,0 +1,11 @@
+---
+slug: :mikutter_focus_to_tab_just_meet
+depends:
+  mikutter: 3.0.6
+  plugin:
+  - gui
+  - command
+version: '0.0.1'
+author: moguno
+name: mikutter_focus_to_tab_just_meet
+description: タブに移動する際に、TLのカーソルを見える位置に移動します。
