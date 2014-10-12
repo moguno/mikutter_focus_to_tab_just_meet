@@ -21,8 +21,13 @@ Plugin.create(:mikutter_focus_to_tab_just_meet) {
         target_widget = Plugin[:gtk].widgetof(target)
 
         if target_widget
-          path = target_widget.visible_range[0]
-          target_widget.set_cursor(path, nil, false)
+          range = target_widget.visible_range
+
+          (path, column) = target_widget.cursor
+
+          if ((range[0] <=> path) == 1) || ((range[1] <=> path) == -1)
+            target_widget.set_cursor(range[0], nil, false)
+          end
         end
       end
     end
